@@ -1,15 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="<c:url value="/resources/css/materialize.min.css"/>"
-	type="text/css" rel="stylesheet" media="screen,projection">
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<title>Tasks</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
 </head>
 <body>
 	<nav>
@@ -32,19 +27,12 @@
 				${task.label} commençant le 
 				<fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${task.beginningDate}" /></li>
 		</c:forEach>
-		<c:if test="${not empty message}"%>
-   			<b>${message}</b>
-  		</c:if>
-		<form:form action="/listTasksNotEndedBetween" method="get">
-			Recherche des taches non finies entre la période
-			entre le <form:input type="date" path="starting" size="30"/>
-			et le <form:input type="date" path="ending" size="30"/>.
-			<form:input type="submit" value="Rechercher"/>
-		</form:form>
+		<a href="/tasks/endTasks">Valider toute les taches</a>
 	</ul>
 	
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery-3.1.1.min.js"/>"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/materialize.min.js"/>"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/main.js"/>"></script>
 	</body>
+</body>
 </html>
